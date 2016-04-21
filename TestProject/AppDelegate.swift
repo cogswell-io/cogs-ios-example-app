@@ -130,21 +130,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         let json: JSON = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-        print("JSON: \(json)")
+        let msgResponse = try GambitMessageResponse(json: json)
         
         dispatch_async(dispatch_get_main_queue()) {
-          let alertController = UIAlertController(title: "Message Response", message: "\(json)", preferredStyle: UIAlertControllerStyle.Alert)
+          let alertController = UIAlertController(title: "Message Response", message: "\(msgResponse)", preferredStyle: UIAlertControllerStyle.Alert)
           alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
           self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
         }
 
 //        let parsedData = try GambitResponseEvent(json: json)
       }
-      catch {
+      catch let error as NSError {
         dispatch_async(dispatch_get_main_queue()) {
           print("Error: \(error)")
+          
+          if error.code == 1 {
+            if let data = data {
+              self.printErrorData(data)
+            }
+          }
         }
       }
+    }
+  }
+  private func printErrorData(data: NSData) {
+    do {
+      let json: JSON = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+      if let jsonString = json["message"] as? String {
+        let msgJSON = try NSJSONSerialization.JSONObjectWithData(jsonString.dataUsingEncoding(NSUTF8StringEncoding)!, options: .AllowFragments)
+        dispatch_async(dispatch_get_main_queue()) {
+          let alertController = UIAlertController(title: "Message Response", message: "\(msgJSON)", preferredStyle: UIAlertControllerStyle.Alert)
+          alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+          self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+        }
+      }
+    } catch {
+      
     }
   }
   
@@ -158,7 +179,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     #if DEBUG
-      Environment = "development"
+      Environment = "dev"
     #else
       Environment = "production"
     #endif

@@ -464,14 +464,14 @@ for example:
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ouw-hb-RWe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="30"/>
-                                                                <state key="normal" title="Register"/>
+                                                                <state key="normal" title="Subscribe"/>
                                                                 <connections>
                                                                     <action selector="sendRequest:" destination="ok7-ZF-Qwz" eventType="touchUpInside" id="413-N1-egd"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8K-Zc-vCa">
                                                                 <rect key="frame" x="178" y="0.0" width="157" height="30"/>
-                                                                <state key="normal" title="Unregister"/>
+                                                                <state key="normal" title="Unsubscribe"/>
                                                                 <connections>
                                                                     <action selector="sendRequest:" destination="ok7-ZF-Qwz" eventType="touchUpInside" id="3zw-z2-ZVQ"/>
                                                                 </connections>

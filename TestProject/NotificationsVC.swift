@@ -45,9 +45,24 @@ class NotificationsVC: ViewController {
   
   private func registerPush(request: GambitRequestPush) {
     let service = GambitService.sharedGambitService
+    let prefs = NSUserDefaults.standardUserDefaults()
+    let registerTopicForPush: () -> Void = {
+      let dict = [
+        "clientSalt" : request.clientSalt,
+        "clientSecret" : request.clientSecret,
+        "UDID" : request.UDID,
+        "accessKey" : request.accessKey,
+        "attributes" : request.attributes,
+        "env" : request.environment,
+        "appID" : request.platformAppID,
+        "namespace" : request.namespace
+      ]
+      prefs.setValue(dict, forKey: "registeredPush")
+      
+      service.registerPush(request, completionHandler: self.completionHandler)
+    }
     
     //unregister previous topic if existing
-    let prefs = NSUserDefaults.standardUserDefaults()
     if let registeredPush = prefs.valueForKey("registeredPush") as? [String: AnyObject] {
       let req = GambitRequestPush(
         clientSalt: registeredPush["clientSalt"] as! String,
@@ -62,22 +77,16 @@ class NotificationsVC: ViewController {
       prefs.removeObjectForKey("registeredPush")
       prefs.synchronize()
       
-      service.unregisterPush(req, completionHandler: self.completionHandler)
+      service.unregisterPush(req) { data, response, error in
+        if error == nil {
+          dispatch_async(dispatch_get_main_queue()) {
+            registerTopicForPush()
+          }
+        }
+      }
+    } else {
+      registerTopicForPush()
     }
-    
-    let dict = [
-      "clientSalt" : request.clientSalt,
-      "clientSecret" : request.clientSecret,
-      "UDID" : request.UDID,
-      "accessKey" : request.accessKey,
-      "attributes" : request.attributes,
-      "env" : request.environment,
-      "appID" : request.platformAppID,
-      "namespace" : request.namespace
-    ]
-    prefs.setValue(dict, forKey: "registeredPush")
-    
-    service.registerPush(request, completionHandler: self.completionHandler)
   }
   
   /**
@@ -95,6 +104,11 @@ class NotificationsVC: ViewController {
   
   private func completionHandler(data: NSData?, response: NSURLResponse?, error: NSError?) {
     do {
+      
+      //uncomment to log raw response
+//      let datastring = NSString(data: data!, encoding:NSUTF8StringEncoding)
+//      print("result:",datastring)
+      
       guard let data = data else {
         dispatch_async(dispatch_get_main_queue()) {
           var msg = "Request Failed"
