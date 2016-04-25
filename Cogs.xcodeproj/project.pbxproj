@@ -15,21 +15,21 @@
 		5C4C2A221BDA8B5D00688BDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4C2A201BDA8B5D00688BDC /* LaunchScreen.storyboard */; };
 		5C4CB82D1BE3D81500F1E952 /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4CB82C1BE3D81500F1E952 /* EventVC.swift */; };
 		5C57D5131CA2CB80001008B5 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C57D5121CA2CB80001008B5 /* AboutVC.swift */; };
-		5CDAE1E61CADACCF003D1073 /* GambitSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDAE1E51CADACB6003D1073 /* GambitSDK.framework */; };
-		5CDAE1E71CADACCF003D1073 /* GambitSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDAE1E51CADACB6003D1073 /* GambitSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5CF9EB521CCE70410015FD68 /* GambitSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF9EB511CCE703B0015FD68 /* GambitSDK.framework */; };
+		5CF9EB531CCE70410015FD68 /* GambitSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF9EB511CCE703B0015FD68 /* GambitSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5CDAE1E41CADACB6003D1073 /* PBXContainerItemProxy */ = {
+		5CF9EB501CCE703B0015FD68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5CDAE1DF1CADACB6003D1073 /* GambitSDK.xcodeproj */;
+			containerPortal = 5CF9EB4B1CCE703B0015FD68 /* GambitSDK.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5CCDD3EE1BE271BC009C8914;
 			remoteInfo = GambitSDK;
 		};
-		5CDAE1E81CADACCF003D1073 /* PBXContainerItemProxy */ = {
+		5CF9EB541CCE70410015FD68 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5CDAE1DF1CADACB6003D1073 /* GambitSDK.xcodeproj */;
+			containerPortal = 5CF9EB4B1CCE703B0015FD68 /* GambitSDK.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 5CCDD3ED1BE271BC009C8914;
 			remoteInfo = GambitSDK;
@@ -43,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5CDAE1E71CADACCF003D1073 /* GambitSDK.framework in Embed Frameworks */,
+				5CF9EB531CCE70410015FD68 /* GambitSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,7 +61,7 @@
 		5C4C2A231BDA8B5D00688BDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4CB82C1BE3D81500F1E952 /* EventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
 		5C57D5121CA2CB80001008B5 /* AboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
-		5CDAE1DF1CADACB6003D1073 /* GambitSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GambitSDK.xcodeproj; path = "aviata-gambit-ios-sdk/GambitSDK.xcodeproj"; sourceTree = "<group>"; };
+		5CF9EB4B1CCE703B0015FD68 /* GambitSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GambitSDK.xcodeproj; path = "cogs-ios-client-sdk/GambitSDK.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CDAE1E61CADACCF003D1073 /* GambitSDK.framework in Frameworks */,
+				5CF9EB521CCE70410015FD68 /* GambitSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +81,7 @@
 			children = (
 				5C4C2A161BDA8B5D00688BDC /* TestProject */,
 				5C4C2A151BDA8B5D00688BDC /* Products */,
-				5CDAE1DF1CADACB6003D1073 /* GambitSDK.xcodeproj */,
+				5CF9EB4B1CCE703B0015FD68 /* GambitSDK.xcodeproj */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -111,10 +111,10 @@
 			path = TestProject;
 			sourceTree = "<group>";
 		};
-		5CDAE1E01CADACB6003D1073 /* Products */ = {
+		5CF9EB4C1CCE703B0015FD68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5CDAE1E51CADACB6003D1073 /* GambitSDK.framework */,
+				5CF9EB511CCE703B0015FD68 /* GambitSDK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,7 +134,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5CDAE1E91CADACCF003D1073 /* PBXTargetDependency */,
+				5CF9EB551CCE70410015FD68 /* PBXTargetDependency */,
 			);
 			name = Cogs;
 			productName = TestProject;
@@ -174,8 +174,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5CDAE1E01CADACB6003D1073 /* Products */;
-					ProjectRef = 5CDAE1DF1CADACB6003D1073 /* GambitSDK.xcodeproj */;
+					ProductGroup = 5CF9EB4C1CCE703B0015FD68 /* Products */;
+					ProjectRef = 5CF9EB4B1CCE703B0015FD68 /* GambitSDK.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -186,11 +186,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5CDAE1E51CADACB6003D1073 /* GambitSDK.framework */ = {
+		5CF9EB511CCE703B0015FD68 /* GambitSDK.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GambitSDK.framework;
-			remoteRef = 5CDAE1E41CADACB6003D1073 /* PBXContainerItemProxy */;
+			remoteRef = 5CF9EB501CCE703B0015FD68 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -224,10 +224,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5CDAE1E91CADACCF003D1073 /* PBXTargetDependency */ = {
+		5CF9EB551CCE70410015FD68 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GambitSDK;
-			targetProxy = 5CDAE1E81CADACCF003D1073 /* PBXContainerItemProxy */;
+			targetProxy = 5CF9EB541CCE70410015FD68 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
