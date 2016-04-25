@@ -12,9 +12,10 @@ The Example app for the Cogs SDK real-time message brokering system
 
 ## Installation
 ### Manual
-* Check out or download Cogs Example App
+* Make sure the SDK submodule is initialized: `git submodule init`
+* Make sure the latest submodule has been pulled: `git submodule update`
 * Open Cogs.xcodeproj in Xcode
-* Build and run
+* Build the project
 
 ## License
 
